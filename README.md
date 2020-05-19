@@ -10,7 +10,7 @@ NPM, Yarn, D3.
 ##### Scrape:
 - node scrape/index.js to run
 
-##### Chart (debugging):
+##### Chart:
 - load d3/index.html in browser
 
 

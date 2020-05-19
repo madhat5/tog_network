@@ -5,6 +5,7 @@ const fs = require('fs');
 const scrapeRes = [{
     name: 'String',
     family: 'String',
+    sobriquet: 'String',
     ranks: 'Array Strings',
     occupation: 'Array Strings',
     position: 'Array Strings',
@@ -12,7 +13,7 @@ const scrapeRes = [{
     bioUrl: 'String'
 }]
 
-// primary page
+// primary pages
 async function charList(page) {
     const data = [];
 
@@ -41,6 +42,24 @@ async function charList(page) {
         await sleep(2000);
     }
     return data
+}
+
+// secondary pages
+async function charInfo(charsData, page) {
+    for (var x = 0; x < charsData.length; x++) {
+        await page.goto(charsData[i].url);
+        const html = await page.content();
+        const $ = cheerio.load(html);
+
+        // build out smart scrape logic?
+        // set if else statements for each;
+        const familyEl = ; 
+        const sobriquetEl = ;
+        const ranksEl = ;
+        const occupationEl = ;
+        const positionEl = ;
+        const affiliationsEl = ;
+    }
 }
 
 // sleep
